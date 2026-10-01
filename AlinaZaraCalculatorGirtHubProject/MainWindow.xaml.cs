@@ -18,7 +18,24 @@ namespace AlinaZaraCalculatorGirtHubProject
         // Обработчик для цифр (0-9) и точки
         private void Button_Number_Click(object sender, RoutedEventArgs e)
         {
-           
+            Button button = (Button)sender;
+            string number = button.Content.ToString();
+
+            if (isNewEntry)
+            {
+                DisplayTextBox.Text = number;
+                isNewEntry = false;
+            }
+            else
+            {
+                // Защита: чтобы нельзя было поставить две точки подряд (например, 5.5.5)
+                if (number == "." && DisplayTextBox.Text.Contains("."))
+                {
+                    return;
+                }
+                DisplayTextBox.Text += number;
+            }
+
         }
 
         // Обработчик для операций (+, -, *, /)
