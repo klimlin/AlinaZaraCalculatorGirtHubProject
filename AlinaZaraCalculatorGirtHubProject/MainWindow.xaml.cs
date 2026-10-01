@@ -41,7 +41,17 @@ namespace AlinaZaraCalculatorGirtHubProject
         // Обработчик для операций (+, -, *, /)
         private void Button_Operation_Click(object sender, RoutedEventArgs e)
         {
-            
+            Button button = (Button)sender;
+
+            // Сохраняем текущее число с экрана в память
+            if (double.TryParse(DisplayTextBox.Text, out double currentNumber))
+            {
+                previousNumber = currentNumber;
+            }
+
+            currentOperation = button.Content.ToString();
+            isNewEntry = true; // Следующий ввод начнет новое число
+
         }
 
         // Обработчик для кнопки "="
