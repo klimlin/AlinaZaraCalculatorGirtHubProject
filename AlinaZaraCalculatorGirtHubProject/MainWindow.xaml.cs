@@ -96,7 +96,11 @@ namespace AlinaZaraCalculatorGirtHubProject
         // Обработчик для кнопки "Стереть" (C)
         private void Button_Clear_Click(object sender, RoutedEventArgs e)
         {
-            
+            DisplayTextBox.Text = "0";
+            previousNumber = 0;
+            currentOperation = "";
+            isNewEntry = true;
+
         }
     }
 }
