@@ -57,7 +57,40 @@ namespace AlinaZaraCalculatorGirtHubProject
         // Обработчик для кнопки "="
         private void Button_Equals_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (double.TryParse(DisplayTextBox.Text, out double currentNumber))
+            {
+                double result = 0;
+
+                switch (currentOperation)
+                {
+                    case "+":
+                        result = previousNumber + currentNumber;
+                        break;
+                    case "-":
+                        result = previousNumber - currentNumber;
+                        break;
+                    case "*":
+                        result = previousNumber * currentNumber;
+                        break;
+                    case "/":
+                        // Защита от деления на ноль
+                        if (currentNumber == 0)
+                        {
+                            DisplayTextBox.Text = "Ошибка";
+                            isNewEntry = true;
+                            return;
+                        }
+                        result = previousNumber / currentNumber;
+                        break;
+                    default:
+                        return; // Если операция не выбрана, ничего не делаем
+                }
+
+                DisplayTextBox.Text = result.ToString();
+                isNewEntry = true;
+                currentOperation = ""; // Сбрасываем операцию после вычисления
+            }
+
         }
 
         // Обработчик для кнопки "Стереть" (C)
