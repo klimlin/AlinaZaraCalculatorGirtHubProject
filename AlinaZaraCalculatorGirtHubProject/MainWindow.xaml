@@ -19,6 +19,10 @@
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-
+		<!-- Экран калькулятора (Алина обращается к нему в коде по имени DisplayTextBox) -->
+		<TextBlock x:Name="DisplayTextBox"
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                   Text="0" FontSize="48" TextAlignment="Right"
+                   VerticalAlignment="Bottom" Margin="10" />
 	</Grid>
 </Window>
