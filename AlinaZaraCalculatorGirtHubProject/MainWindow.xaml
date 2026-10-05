@@ -43,5 +43,9 @@
 		<Button Content="2" Grid.Row="4" Grid.Column="1" Margin="2" FontSize="20" Background="White" Click="Button_Number_Click"/>
 		<Button Content="3" Grid.Row="4" Grid.Column="2" Margin="2" FontSize="20" Background="White" Click="Button_Number_Click"/>
 		<Button Content="+" Grid.Row="4" Grid.Column="3" Margin="2" FontSize="20" Background="#BBDEFB" Click="Button_Operation_Click"/>
+		<!-- Строка 5 -->
+		<Button Content="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="2" FontSize="20" Background="White" Click="Button_Number_Click"/>
+		<Button Content="." Grid.Row="5" Grid.Column="2" Margin="2" FontSize="24" Background="White" Click="Button_Number_Click"/>
+		<Button Content="=" Grid.Row="5" Grid.Column="3" Margin="2" FontSize="20" Background="#C8E6C9" Click="Button_Equals_Click"/>
 	</Grid>
 </Window>
